@@ -3,7 +3,6 @@
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
-
 import { Button, TextBox } from "@/app/common";
 export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
