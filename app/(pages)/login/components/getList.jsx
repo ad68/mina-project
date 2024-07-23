@@ -1,12 +1,14 @@
+"use client";
+import { api } from "@/app/api";
+import { useAxiosWithToken } from "@/app/hook";
 import React from "react";
 
-//
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: C O M P O N E N T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function Index({ onChange, value, text }) {
+export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
 
   // ─── States ─────────────────────────────────────────────────────────────────────
@@ -14,21 +16,21 @@ export default function Index({ onChange, value, text }) {
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
   // ─── Functions ──────────────────────────────────────────────────────────────────
+const getData = ()=>{
+    useAxiosWithToken.get(api.auth.sendOtp).then(
+        res=>{
 
+        }
+    ).catch(
+        err=>{
+            
+        }
+    )
+}
   //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
   // ──────────────────────────────────────────────────────────────
   //
-  return (
-    <section className="grid gap-1">
-      <span className="block text-center mt-3">{text} </span>
-      <input
-        value={value}
-        onChange={onChange}
-        type="text"
-        className="border border-silver p-2 rounded w-full"
-      />
-    </section>
-  );
+  return <></>;
 }
