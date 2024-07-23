@@ -33,7 +33,7 @@ const router = useRouter()
         setLoading(false)
         setShow(2);
       })
-      .catch((err) => {setLoading(loading)});
+      .catch((err) => {setLoading(false)});
   };
   const signIn = () => {
     setLoading(true)
