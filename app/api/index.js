@@ -4,4 +4,7 @@ export const api = {
     sendOtp: baseURL + "tazmin/notification/send-otp",
     loginOrSignup: baseURL + "tazmin/users/login-or-signup",
   },
+  plate: {
+    getPlates: baseURL + "tazmin/tazmin-mashin/license-plate/search-with-pagination?pageNo=0&pageSize=8",
+  },
 };
