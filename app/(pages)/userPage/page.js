@@ -1,5 +1,5 @@
 "use client";
-import { useAxios, useAxiosWithToken } from "@/app/hook";
+import { useAxiosWithToken } from "@/app/hook";
 import React from "react";
 
 // ────────────────────────────────────────────────────────── I ──────────
@@ -15,15 +15,20 @@ export default function Index({}) {
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
   // ─── Functions ──────────────────────────────────────────────────────────────────
-const getPlateList= ()=>{
-  useAxiosWithToken.get().then(res =>{}).catch(err=>{})
-}
+  const getPlateList = () => {
+    useAxiosWithToken
+      .get()
+      .then((res) => {})
+      .catch((err) => {});
+  };
   //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
   // ──────────────────────────────────────────────────────────────
   //
-  return <>
-  <section>
-    </section></>;
+  return (
+    <>
+      <section></section>
+    </>
+  );
 }
