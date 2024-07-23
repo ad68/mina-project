@@ -1,3 +1,4 @@
 import Button from "./Button";
 import TextBox from "./TextBox";
-export { Button, TextBox };
+import Modal from "./Modal";
+export { Button, TextBox, Modal };
