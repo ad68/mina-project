@@ -22,7 +22,7 @@ export default function Index({}) {
   const [click, setClick] = useState(false);
   const [loading, setLoading] = useState(false);
   const [editModal, setEditModal] = useState(false);
-  
+
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
 
   // ─── Functions ──────────────────────────────────────────────────────────────────
@@ -38,9 +38,14 @@ export default function Index({}) {
         setLoading(false);
       });
   };
-const deletePlate = (id)=>{
-  useAxiosWithToken.delete(api.plate.delete+id).then(()=>{getPlateList()}).catch()
-}
+  const deletePlate = (id) => {
+    useAxiosWithToken
+      .delete(api.plate.delete + id)
+      .then(() => {
+        getPlateList();
+      })
+      .catch();
+  };
   //
   // ──────────────────────────────────────────────────── I ──────────
   //   :::::: R E N D E R : :  :   :    :     :        :          :
@@ -62,25 +67,34 @@ const deletePlate = (id)=>{
                     {item.alphabetCode} , {item.licenseCode1} , {item.licenseCode2}
                   </td>
                   <td>
-                    <Button onCLick={()=>{deletePlate(item.id)}}>حذف</Button>
+                    <Button
+                      onCLick={() => {
+                        deletePlate(item.id);
+                      }}
+                    >
+                      حذف
+                    </Button>
                   </td>
                   <td>
-                    <Button onCLick={()=>{
-                      setRowData(item)
-                      setEditModal(true)
-                    }}>ویرایش</Button>
+                    <Button
+                      onCLick={() => {
+                        setRowData(item);
+                        setEditModal(true);
+                      }}
+                    >
+                      ویرایش
+                    </Button>
                   </td>
                 </tr>
               </>
             ))}
           </tbody>
         </table>
-        <Modal open={addModal} onClose={() => setAddModal(false)} >
-          
+        <Modal open={addModal} onClose={() => setAddModal(false)}>
           <Plate setAddModal={setAddModal} getPlateList={getPlateList} />
         </Modal>
-        <Modal open={editModal} onClose={()=> setEditModal(false)}>
-        {rowData && <EditForm rowData={rowData} getPlate={getPlateList} />}
+        <Modal open={editModal} onClose={() => setEditModal(false)}>
+          {rowData && <EditForm rowData={rowData} getPlate={getPlateList} />}
         </Modal>
       </section>
     </>
