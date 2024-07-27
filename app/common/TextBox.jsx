@@ -6,7 +6,7 @@ import React from "react";
 // ────────────────────────────────────────────────────────────────────
 //
 
-export default function Index({ onChange, value, text }) {
+export default function Index({ onChange, value, text, className }) {
   // ─── Global Variable ────────────────────────────────────────────────────────────
 
   // ─── States ─────────────────────────────────────────────────────────────────────
@@ -27,7 +27,7 @@ export default function Index({ onChange, value, text }) {
         value={value}
         onChange={onChange}
         type="text"
-        className="border border-silver p-2 rounded w-full"
+        className={`border border-silver p-2 rounded-md w-full ${className}`}
       />
     </section>
   );
